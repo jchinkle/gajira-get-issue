@@ -19919,7 +19919,7 @@ try {
 }
 
 function findIssue(text) {
-  return /APF-\d*/gim.exec(text)[0];
+  return (/APF-\d*/gim.exec(text)||[''])[0];
 }
 
 function issueFound(issue) {
