@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cybervoid/gajira-get-issue.git"
+    "url": "git+https://github.com/jchinkle/gajira-get-issue.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cybervoid/gajira-get-issue/issues"
+    "url": "https://github.com/jchinkle/gajira-get-issue/issues"
   },
-  "homepage": "https://github.com/cybervoid/gajira-get-issue#readme",
+  "homepage": "https://github.com/jchinkle/gajira-get-issue#readme",
   "dependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1"
