@@ -19919,7 +19919,7 @@ try {
 }
 
 function findIssue(text) {
-    let regex = new RegExp('.+\\/(.*-\\d+)', 'gim');
+    let regex = new RegExp('(APF)-(\d*)', 'gim');
     return regex.exec(text);
 }
 
