@@ -19897,7 +19897,7 @@ const inputText = core.getInput('input-text');
 try {
     const issue = findIssue(inputText);
     if (issue) {
-        issueFound(issue[1]);
+        issueFound(issue);
     } else {
         console.log("Issue not found on provided input: " + inputText);
         //try to search in github object
@@ -19906,7 +19906,7 @@ try {
             let res = commitMessages.some(function (element) {
                 const issue = findIssue(element.message);
                 if (issue) {
-                    issueFound(issue[1]);
+                    issueFound(issue);
                     return true;
                 } else {
                     core.setOutput("issue", '');
@@ -19919,8 +19919,7 @@ try {
 }
 
 function findIssue(text) {
-    let regex = new RegExp('(APF)-(\d*)', 'gim');
-    return regex.exec(text);
+  return /APF-\d*/gim.exec(text)[0];
 }
 
 function issueFound(issue) {
@@ -19930,7 +19929,7 @@ function issueFound(issue) {
     const fileName = 'config.yml';
     try {
         fs.mkdirSync(filePath, {recursive: true});
-        fs.appendFileSync(filePath + fileName, 'issue: ' + issue[1] + '\r\n')
+        fs.appendFileSync(filePath + fileName, 'issue: ' + issue + '\r\n')
     } catch (e) {
         core.setFailed('Error trying to create the file ' + fileName);
     }
